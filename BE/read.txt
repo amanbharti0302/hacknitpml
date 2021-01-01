@@ -1,0 +1,3 @@
+distance_threshold is sensitive to the data feeded.
+=> it is dependent on the total no. of distinct words;
+=> hence, a data with different texts will have high threshold compared to a data with similar texts.

@@ -14,10 +14,14 @@ app.post('/model',(req,res)=>{
 	child.stdout.on('data',(data)=>{
 		let model_output=data.toString();
 		model_output=model_output.replace(/'/g,'"');
-		model_output=JSON.parse(model_output);
-		processed=true;
-		console.log(model_output);
-		res.json(model_output);
+		try{
+			processed=true;
+			model_output=JSON.parse(model_output);
+			return res.json(model_output);
+		}
+		catch(err){
+			res.json(`this is bad => error: ${err}`);
+		}
 	})
 	child.stderr.on('data',(data)=>{
 		//console.error(data.toString());
@@ -27,7 +31,7 @@ app.post('/model',(req,res)=>{
 	child.on('exit',(code)=>{
 		console.log(`Child exited with code ${code}`);
 		if(!processed)
-			res.json(code);
+			res.json(`this is bad => code: ${code}`);
 	});
 
 });

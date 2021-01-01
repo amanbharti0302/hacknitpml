@@ -1,11 +1,21 @@
-import sys
-import json
-
-data=json.loads(sys.argv[1]);
-
-# usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
-
 import matplotlib.pyplot as plt
+
+data=[{
+    "id": 1804020,
+    "text": "This is the best!!!"
+},{
+    "id": 1804043,
+    "text": "Nice, yet not a HUGE fan"
+},{
+    "id": 1804165,
+    "text": "this is quite nice"
+},{
+    "id": 1804019,
+    "text": "trying to find better alternatives"
+},{
+    "id": 1804017,
+    "text": "this is quite nice"
+}]
 
 ids=[]
 for i in range(len(data)):
@@ -54,7 +64,7 @@ for i in range(len(data)):
     d={
         "id": data[i]["id"],
         "cluster": y_pred[i],
-        "coordinate": coordinates[i].tolist()
+        "coordinate": coordinates[i]
     }
     data1.append(d)
 print(data1)

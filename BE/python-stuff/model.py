@@ -2,13 +2,13 @@ import matplotlib.pyplot as plt
 
 data=[{
     "id": 1804020,
-    "text": "This is the best!!!"
+    "text": "This is the best 1234!!!"
 },{
     "id": 1804043,
     "text": "Nice, yet not a HUGE fan"
 },{
     "id": 1804165,
-    "text": "this is quite nice"
+    "text": "this is quite nice 1 2 3 4"
 },{
     "id": 1804019,
     "text": "trying to find better alternatives"
